@@ -1,3 +1,8 @@
 pystan==2.18
-fbprophet==0.5
+fbprophet
 s3fs==0.3.4
+alpaca-trade-api
+yfinance
+numpy
+pandas
+datetime
