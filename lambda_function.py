@@ -194,7 +194,9 @@ def run(ALPACAUSER,ALPACAPW,GETNEWCONSTITUENTS = False):
       # get the data from yfinance
       datan = get_data(constituents,alreadyInvested)
       constituents = datan.columns.to_list()
-      print("length new const. ",len(constituents))
+      # sometimes it happens that there still is an open order symbol in here
+      for stock in openorders:
+        constituents = np.delete(constituents, np.where(constituents == stock))
 
       # do new investing
       investments = {} # track current new investments
