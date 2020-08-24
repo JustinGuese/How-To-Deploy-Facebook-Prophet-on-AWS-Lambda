@@ -149,7 +149,7 @@ def run(ALPACAUSER,ALPACAPW,GETNEWCONSTITUENTS = False):
         'https://paper-api.alpaca.markets'
     )
     clock = api.get_clock()
-    if True:#clock.is_open: # if markets open, else cancel
+    if clock.is_open: # if markets open, else cancel
       account = api.get_account()
       buyingpower = float(account.buying_power) * 0.95 # to avoid overspending
 
